@@ -17,7 +17,8 @@ const Web3Connection=()=>{
     try{
       if(window.ethereum) { await window.ethereum.enable() }
       const web3provider = new ethers.providers.Web3Provider(window.ethereum);
-      if((await web3provider.getNetwork()).chainId===42){
+      const chainId = (await web3provider.getNetwork()).chainId;
+      if(chainId===42){
         //set provider
         dispatch({type: 'SET_WEB3', payload: web3provider});
 
@@ -26,7 +27,7 @@ const Web3Connection=()=>{
         let contract = new ethers.Contract(contractAddress, contractABI, signer);
         dispatch({type: 'SET_CONTRACT', payload: contract});
       } else {
-        window.alert('Not Using Ropsten Network. Please reconnect using a wallet connected to the Ropsten network');
+        window.alert('Not Using Kovan. Please reconnect using a wallet connected to the Kovan network');
       }
     } catch(err){
       dispatch({type: 'SET_ERROR', payload: 'Connection to Wallet Failed'});

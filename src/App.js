@@ -45,7 +45,7 @@ function App() {
         <Center h="15vh">
           <VStack>
             <Box fontWeight='bold' fontSize='30px'>Ethereum Time Capsule</Box>
-            <Box pl={400}>powered by the Kovan</Box>
+            <Box pl={400}>powered by Kovan</Box>
           </VStack>
         </Center>
           <Divider/>
