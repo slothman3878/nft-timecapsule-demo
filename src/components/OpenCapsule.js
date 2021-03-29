@@ -6,6 +6,7 @@ import {
   Textarea,
   NumberInput,
   NumberInputField,
+  Divider,
 } from '@chakra-ui/react';
 import {ethers} from 'ethers';
 
@@ -70,7 +71,7 @@ const OpenCapsule=(props)=>{
 
   return(
     <Box>
-      <Box>{props.token.title}</Box>
+      <Box pb={7}>{props.token.title}<Divider/></Box>
       {!connecting
       ? message
         ? <Box>
