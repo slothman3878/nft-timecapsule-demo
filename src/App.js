@@ -7,14 +7,12 @@ import {
   Button,
   Divider,
 } from '@chakra-ui/react';
-import {ethers} from 'ethers';
 import Ipfs from 'ipfs';
 
 import { Reducer, GlobalContext } from "./contexts/GlobalContext";
 import Web3Connection from "./components/Web3Connection";
 import MakeTimeCapsule from "./components/MakeTimeCapsule";
 import CheckTimeCapsule from "./components/CheckTimeCapsule";
-import DatePicker from 'react-datepicker';
 
 function App() {
   const initialState = {
@@ -45,7 +43,7 @@ function App() {
         <Center h="15vh">
           <VStack>
             <Box fontWeight='bold' fontSize='30px'>Ethereum Time Capsule</Box>
-            <Box pl={400}>powered by Kovan</Box>
+            <Box pl={400}>powered by Rinkeby</Box>
           </VStack>
         </Center>
           <Divider/>

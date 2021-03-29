@@ -4,7 +4,6 @@ import {
   VStack,
   Button,
 } from '@chakra-ui/react';
-import {ethers} from 'ethers';
 
 import { GlobalContext } from '../contexts/GlobalContext';
 import OpenCapsule from './OpenCapsule';
@@ -27,7 +26,14 @@ const CheckTimeCapsule=(props)=>{
           let tokenId = (await state.contract.tokenOfOwnerByIndex(address, i)).toNumber();
           let dueDate = new Date((await state.contract.dueDate(tokenId)).toNumber()*1000);
           let creationDate = new Date((await state.contract.creationDate(tokenId)).toNumber()*1000);
-          newtokenlist.push({id: tokenId, dueDate: dueDate, creationDate: creationDate});
+
+          let uri = await state.contract.viewTitle(tokenId);
+          let data = await fetch(`https://ipfs.io/ipfs/${uri}`);
+          let blob = await data.blob();
+          let arrayBuffer = await blob.arrayBuffer();
+          let title = String.fromCharCode.apply(null, new Uint16Array(arrayBuffer));
+
+          newtokenlist.push({id: tokenId, dueDate: dueDate, creationDate: creationDate, title: title});
         }catch(err){
           loop = false;
         }
@@ -51,8 +57,12 @@ const CheckTimeCapsule=(props)=>{
                 </VStack>
               : <VStack>
                   {tokenlist.map((token, key)=>{
-                    return <Button w="250px" onClick={()=>setOpen(token)}>
-                      from {toMonth(token.creationDate.getMonth())} {token.creationDate.getDate()}, {token.creationDate.getFullYear()}
+                    return <Button onClick={()=>setOpen(token)}>
+                      {token.title}&nbsp;
+                       from&nbsp;
+                       {toMonth(token.creationDate.getMonth())}&nbsp;
+                       {token.creationDate.getDate()},&nbsp;
+                       {token.creationDate.getFullYear()}
                     </Button>
                   })}
                 </VStack>}

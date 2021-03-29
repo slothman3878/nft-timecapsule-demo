@@ -1,8 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import {
   Box,
-  Container,
-  VStack,
   HStack,
   Button,
   Textarea,
@@ -42,7 +40,6 @@ const OpenCapsule=(props)=>{
 
   const changeDueDate=async()=>{
     setConnecting(true);
-    let address = await (await state.provider.getSigner()).getAddress();
     try{
       (await state.contract.resetDueDate(
         props.token.id,
@@ -73,6 +70,7 @@ const OpenCapsule=(props)=>{
 
   return(
     <Box>
+      <Box>{props.token.title}</Box>
       {!connecting
       ? message
         ? <Box>
