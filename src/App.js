@@ -30,7 +30,6 @@ function App() {
           });
         dispatch({type:'SET_IPFS', payload: ipfs});
       }catch(err){
-        window.alert(err.message);
       }
     };
 
@@ -46,31 +45,37 @@ function App() {
             <Box pl={400}>powered by Rinkeby</Box>
           </VStack>
         </Center>
-          <Divider/>
-        <Center h="60vh">
-          <VStack style={{textAlign: 'center', fontWeight: 'bold',}}>
-          {state.provider?
-            !checkTC&&!makeTC ? 
-              <VStack>
-                <Button my={5} onClick={()=>{setCheckTC(true)}}>
-                  Check your Time Capsules
-                </Button>
-                <Button my={5} onClick={()=>{setMakeTC(true)}}>
-                  Make a new Time Capsule
-                </Button>
-              </VStack>
-            :checkTC&&!makeTC ?
-              <CheckTimeCapsule
-                back={()=>{setCheckTC(false)}} 
-                change={()=>{setCheckTC(false); setMakeTC(true)}}/>
-            :makeTC&&!checkTC ?
-              <MakeTimeCapsule
-                back={()=>{setMakeTC(false)}} 
-                change={()=>{setMakeTC(false); setCheckTC(true)}}/>
-            :<p>Give it a few miliseconds</p>
-          : <Web3Connection/>}
-          </VStack>
-        </Center>
+        <Divider/>
+        {!state.error
+        ? <Center h="60vh">
+            <VStack style={{textAlign: 'center', fontWeight: 'bold',}}>
+            {state.provider?
+              !checkTC&&!makeTC ? 
+                <VStack>
+                  <Button my={5} onClick={()=>{setCheckTC(true)}}>
+                    Check your Time Capsules
+                  </Button>
+                  <Button my={5} onClick={()=>{setMakeTC(true)}}>
+                    Make a new Time Capsule
+                  </Button>
+                </VStack>
+              :checkTC&&!makeTC ?
+                <CheckTimeCapsule
+                  back={()=>{setCheckTC(false)}} 
+                  change={()=>{setCheckTC(false); setMakeTC(true)}}/>
+              :makeTC&&!checkTC ?
+                <MakeTimeCapsule
+                  back={()=>{setMakeTC(false)}} 
+                  change={()=>{setMakeTC(false); setCheckTC(true)}}/>
+              :<p>Give it a few miliseconds</p>
+            : <Web3Connection/>}
+            </VStack>
+          </Center>
+        : <Center h="60vh">
+            <Box>
+              {state.error.message}
+            </Box>
+          </Center>}
       </ChakraProvider>
     </GlobalContext.Provider>
   );

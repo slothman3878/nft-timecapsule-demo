@@ -31,7 +31,6 @@ const Web3Connection=()=>{
       }
     } catch(err){
       dispatch({type: 'SET_ERROR', payload: 'Connection to Wallet Failed'});
-      window.alert('Connection Failed');
     }
   }
 

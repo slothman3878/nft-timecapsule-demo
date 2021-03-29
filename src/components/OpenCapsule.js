@@ -34,7 +34,8 @@ const OpenCapsule=(props)=>{
       let arrayBuffer = await blob.arrayBuffer();
       setMessage(String.fromCharCode.apply(null, new Uint16Array(arrayBuffer)));
     }catch(err){
-      dispatch({type: 'SET_ERROR', payload: err})
+      setFee(0);
+      setNewdate(new Date());
     }
     setConnecting(false);
   };

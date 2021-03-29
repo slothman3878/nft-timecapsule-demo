@@ -36,9 +36,9 @@ const MakeTimeCapsule=(props)=>{
               setSubmitting(2);
             });
         }catch(err){
-          window.alert(err.message);
           if(err.message==='MetaMask Tx Signature: User denied transaction signature.'){
             window.alert('User denied transaction');
+            setSubmitting(0);
           }
           else { dispatch({type:'SET_ERROR', payload: err}); }
         }
