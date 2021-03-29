@@ -58,7 +58,7 @@ const CheckTimeCapsule=(props)=>{
               : <VStack>
                   {tokenlist.map((token, key)=>{
                     return <Button onClick={()=>setOpen(token)}>
-                      {token.title}&nbsp;
+                      "{token.title}"&nbsp;
                        from&nbsp;
                        {toMonth(token.creationDate.getMonth())}&nbsp;
                        {token.creationDate.getDate()},&nbsp;
