@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/nft-timecapsule-demo/static/css/main.5b071db0.chunk.css",
-    "main.js": "/nft-timecapsule-demo/static/js/main.f83b5295.chunk.js",
-    "main.js.map": "/nft-timecapsule-demo/static/js/main.f83b5295.chunk.js.map",
+    "main.js": "/nft-timecapsule-demo/static/js/main.add9f398.chunk.js",
+    "main.js.map": "/nft-timecapsule-demo/static/js/main.add9f398.chunk.js.map",
     "runtime-main.js": "/nft-timecapsule-demo/static/js/runtime-main.74e132a7.js",
     "runtime-main.js.map": "/nft-timecapsule-demo/static/js/runtime-main.74e132a7.js.map",
-    "static/js/2.a388068e.chunk.js": "/nft-timecapsule-demo/static/js/2.a388068e.chunk.js",
-    "static/js/2.a388068e.chunk.js.map": "/nft-timecapsule-demo/static/js/2.a388068e.chunk.js.map",
+    "static/js/2.46f6fc62.chunk.js": "/nft-timecapsule-demo/static/js/2.46f6fc62.chunk.js",
+    "static/js/2.46f6fc62.chunk.js.map": "/nft-timecapsule-demo/static/js/2.46f6fc62.chunk.js.map",
     "static/js/3.deec76fd.chunk.js": "/nft-timecapsule-demo/static/js/3.deec76fd.chunk.js",
     "static/js/3.deec76fd.chunk.js.map": "/nft-timecapsule-demo/static/js/3.deec76fd.chunk.js.map",
     "index.html": "/nft-timecapsule-demo/index.html",
     "static/css/main.5b071db0.chunk.css.map": "/nft-timecapsule-demo/static/css/main.5b071db0.chunk.css.map",
-    "static/js/2.a388068e.chunk.js.LICENSE.txt": "/nft-timecapsule-demo/static/js/2.a388068e.chunk.js.LICENSE.txt"
+    "static/js/2.46f6fc62.chunk.js.LICENSE.txt": "/nft-timecapsule-demo/static/js/2.46f6fc62.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.74e132a7.js",
-    "static/js/2.a388068e.chunk.js",
+    "static/js/2.46f6fc62.chunk.js",
     "static/css/main.5b071db0.chunk.css",
-    "static/js/main.f83b5295.chunk.js"
+    "static/js/main.add9f398.chunk.js"
   ]
 }
